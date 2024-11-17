@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éclat Hotel Boutique - Palermo, Buenos Aires</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
+        
+        :root {
+            --color-navy: #1a2942;
+            --color-gold: #c8a97e;
+            --color-olive: #5f6f52;
+            --color-offwhite: #f5f5f0;
+        }
+
+        header {
+            background-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .nav-link {
+            position: relative;
+            background-color: (var(--color-offwhite));
+            color: var(--color-navy);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .booking-btn {
+            background-color: var(--color-gold);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .booking-btn:hover {
+            background-color: var(--color-navy);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            color: var(--color-navy);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .feature-card {
+            border: 1px solid rgba(200, 169, 126, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+
+        .language-selector:hover .language-options {
+            display: block;
+        }
+
+        .px-4 {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        .py-20 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .py-8 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .bg-contact {
+            background-color: #1a2942;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <img src="C:\Users\brili\Desktop\carpetas debora\IA\TP FINAL\HOTEL ECLAIT WEB\assets\images\TP Final - Grupo 6 - Logo Éclat Hotel Boutique.png" alt="Éclat Hotel Boutique" class="h-20">
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link">Inicio</a>
+                <a href="#rooms" class="nav-link">Habitaciones</a>
+                <a href="#experience" class="nav-link">Experiencia</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+                
+                <div class="language-selector">
+                    <button class="flex items-center space-x-2">
+                        <i class="fas fa-globe"></i>
+                        <span>ES</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <div class="language-options">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">中文</a>
+                    </div>
+                </div>
+                
+                <a href="tel:+541159842233" class="flex items-center space-x-2">
+                    <i class="fas fa-phone"></i>
+                    <span>+54 11 5984 2233</span>
+                </a>
+            </nav>
+            
+            <button class="md:hidden" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen">
+        <img src="C:\Users\brili\Desktop\carpetas debora\IA\TP FINAL\HOTEL ECLAIT WEB\assets\images\TP Final - Grupo 6 - Img fondo landing page.jpg" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-6xl font-serif mb-6">Lujo y autenticidad</h1>
+                <p class="text-xl mb-8">en el corazón de Palermo</p>
+                <a href="https://booking.com" target="_blank" class="booking-btn px-8 py-3 rounded-md">
+                    Reservar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="experience" class="py-20 bg-offwhite">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Experiencia Éclat</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-lg text-center">
+                    <i class="fas fa-concierge-bell text-4xl text-gold mb-4"></i>
+                    <h3 class="text-xl font-serif mb-4">Servicio Personalizado</h3>
+                    <p class="text-gray-600">Atención exclusiva para cada huésped</p>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-lg text-center">
+                    <i class="fas fa-wifi text-4xl text-gold mb-4"></i>
+                    <h3 class="text-xl font-serif mb-4">Tecnología de Punta</h3>
+                    <p class="text-gray-600">Comodidades modernas con toque humano</p>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-lg text-center">
+                    <i class="fas fa-map-marker-alt text-4xl text-gold mb-4"></i>
+                    <h3 class="text-xl font-serif mb-4">Ubicación Privilegiada</h3>
+                    <p class="text-gray-600">En el corazón de Palermo Viejo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Nuestras Habitaciones</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group">
+                    <img src="C:\Users\brili\Desktop\carpetas debora\IA\TP FINAL\HOTEL ECLAIT WEB\assets\images\TP Final - Grupo 6 - Suite presidencial.jpg.webp" alt="Suite Presidencial" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-serif mb-2">Suite Presidencial</h3>
+                    <p class="text-gray-600 mb-4">Lujo y confort en espacios únicos</p>
+                    <a href="https://booking.com" target="_blank" class="text-gold hover:text-navy">
+                        Ver Detalles →
+                    </a>
+                </div>
+                <div class="group">
+                    <img src="C:\Users\brili\Desktop\carpetas debora\IA\TP FINAL\HOTEL ECLAIT WEB\assets\images\TP Final - Grupo 6 - Suite Jardín.jpg.webp" alt="Suite Jardín" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-serif mb-2">Suite Jardín</h3>
+                    <p class="text-gray-600 mb-4">Conecta con la naturaleza</p>
+                    <a href="https://booking.com" target="_blank" class="text-gold hover:text-navy">
+                        Ver Detalles →
+                    </a>
+                </div>
+                <div class="group">
+                    <img src="C:\Users\brili\Desktop\carpetas debora\IA\TP FINAL\HOTEL ECLAIT WEB\assets\images\TP Final - Grupo 6 - Suite ejecutiva.jpg.webp" alt="Suite Ejecutiva" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-serif mb-2">Suite Ejecutiva</h3>
+                    <p class="text-gray-600 mb-4">Trabajo y descanso en armonía</p>
+                    <a href="https://booking.com" target="_blank" class="text-gold hover:text-navy">
+                        Ver Detalles →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-contact text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 bg-navy-dark">
+                <div>
+                    <h2 class="text-4xl font-serif mb-6">Contáctenos</h2>
+                    <p class="mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        Francisco Acuña de Figueroa, Palermo, CABA
+                    </p>
+                    <p class="mb-4">
+                        <i class="fas fa-envelope mr-2"></i>
+                        info@eclathotel.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-2"></i>
+                        +54 11 5984 2233
+                    </p>
+                </div>
+                <div>
+                    <img src="C:\Users\brili\Desktop\carpetas debora\IA\TP FINAL\HOTEL ECLAIT WEB\assets\images\TP Final - Grupo 6 - Mapa.jpg" alt="Map" class="w-full h-64 rounded-lg object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-black py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 Éclat Hotel Boutique. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Language switcher functionality
+        const languageButtons = document.querySelectorAll('.language-options a');
+        languageButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Here you would typically implement the language switch
+                // For demo purposes, we'll just log the selected language
+                console.log('Selected language:', button.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
